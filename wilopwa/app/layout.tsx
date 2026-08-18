@@ -95,14 +95,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 }`}
         </Script>
 
-        {/* Denser AI chatbot widget */}
-        <Script id="denser-chatbot-init" type="module" strategy="afterInteractive">
-          {`import Chatbot from "https://cdn.jsdelivr.net/npm/@denserai/embed-chat@1/dist/web.min.js";
-Chatbot.init({
-    chatbotId: "chatbot_i0ir1wimccf9crolldbva",
-});`}
-        </Script>
-
         {/* Wilo global config / retargeting */}
         <Script src="https://wilo.com/in/en/technical__mw/Wilo-Global-Config-Script.js" strategy="afterInteractive" />
         <Script src="https://wilo.com/en/technical/Retargeting-Config-Script.js" strategy="afterInteractive" />

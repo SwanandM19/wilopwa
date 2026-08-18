@@ -1,4 +1,4 @@
-const CACHE_NAME = "wilo-pwa-v1";
+const CACHE_NAME = "wilo-pwa-v2";
 const APP_SHELL = [
   "/",
   "/site.webmanifest",
@@ -35,8 +35,17 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   const { request } = event;
+  const url = new URL(request.url);
 
-  if (request.method !== "GET" || !request.url.startsWith(self.location.origin)) {
+  if (request.method !== "GET" || url.origin !== self.location.origin) {
+    return;
+  }
+
+  // Never intercept Next.js build assets (JS/CSS chunks, HMR, RSC payloads).
+  // Caching these breaks app updates: chunk URLs can be reused/rewritten
+  // between builds in dev, so a cache-first strategy here would keep serving
+  // stale bundles forever regardless of new deploys.
+  if (url.pathname.startsWith("/_next/")) {
     return;
   }
 

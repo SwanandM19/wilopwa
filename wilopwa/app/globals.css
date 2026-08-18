@@ -60,3 +60,33 @@ body {
   overflow-x: hidden !important;
   height: auto !important;
 }
+
+@keyframes pwa-install-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pwa-install-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+}
+
+.pwa-install-in {
+  animation: pwa-install-in 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.pwa-install-out {
+  animation: pwa-install-out 0.18s ease-in both;
+}
