@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Local-clone fix: Slick carousel JS can't init here (it depends on wilo.com's
+   same-origin API calls), and the site CSS hides every slide by default
+   (.slick-slide{display:none}). Force the first slide of each carousel to
+   show so the page reads as static content instead of empty gaps. */
+.slick-slide {
+  display: none !important;
+}
+.slick-slide:first-child {
+  display: block !important;
+  float: none !important;
+  width: 100% !important;
+}
+.slick-track {
+  width: 100% !important;
+  -webkit-transform: none !important;
+  transform: none !important;
+}
+.slick-list {
+  overflow: visible !important;
+}
+.slick-arrow,
+.slick-dots,
+.slick-prev,
+.slick-next {
+  display: none !important;
+}
+
+/* Cookie-consent SDK removed; this guards against any other script
+   (chat widget, analytics) locking page scroll via overflow/height. */
+html,
+body {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  height: auto !important;
+}
