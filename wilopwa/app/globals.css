@@ -70,8 +70,16 @@ body {
   display: none !important;
 }
 
-/* Cookie-consent SDK removed; this guards against any other script
-   (chat widget, analytics) locking page scroll via overflow/height. */
+/* Cookie-consent SDK removed: Wilo's site config script injects a OneTrust
+   banner (#onetrust-consent-sdk) that re-shows on every load since nothing
+   here reads/writes its consent cookie. Hide it outright instead of wiring
+   up a consent flow this clone doesn't need. */
+#onetrust-consent-sdk {
+  display: none !important;
+}
+
+/* This guards against any other script (chat widget, analytics) locking
+   page scroll via overflow/height. */
 html,
 body {
   overflow-y: auto !important;
