@@ -19,6 +19,10 @@ export default function SplashScreen() {
       return;
     }
 
+    // Third-party widgets (e.g. the chatbot's shadow-DOM host) render into
+    // their own stacking context and ignore our overlay's z-index, so hide
+    // them at the CSS level for as long as the splash is up.
+    document.body.classList.add("splash-active");
     setVisible(true);
 
     const closeTimer = window.setTimeout(() => setClosing(true), 2200);
@@ -27,7 +31,10 @@ export default function SplashScreen() {
 
   useEffect(() => {
     if (closing) {
-      const timeout = window.setTimeout(() => setVisible(false), 500);
+      const timeout = window.setTimeout(() => {
+        setVisible(false);
+        document.body.classList.remove("splash-active");
+      }, 500);
       return () => window.clearTimeout(timeout);
     }
   }, [closing]);

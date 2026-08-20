@@ -156,3 +156,9 @@ body {
   border-radius: 9999px;
   animation: splash-ripple 1.8s ease-out infinite;
 }
+
+/* Hide the chatbot widget (renders into its own shadow-DOM host, outside
+   our splash overlay's stacking context) while the splash is up. */
+body.splash-active #wilo-widget-host {
+  display: none !important;
+}
