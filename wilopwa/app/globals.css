@@ -25,6 +25,24 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Local-clone fix: the wilo-icons webfont fails to load cross-origin (wilo.com
+   sends no Access-Control-Allow-Origin on its font files), so every
+   .wilo-btn:before icon glyph rendered as a tofu box. Swap it for the real
+   chevron image icon instead of a font ligature (matches wilo.com/in/en). */
+.wilo-btn:before {
+  content: "" !important;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-image: url("/chevron.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.stage-header .wilo-btn:before {
+  background-image: url("/next.png");
+}
+
 /* Local-clone fix: Slick carousel JS can't init here (it depends on wilo.com's
    same-origin API calls), and the site CSS hides every slide by default
    (.slick-slide{display:none}). Force the first slide of each carousel to

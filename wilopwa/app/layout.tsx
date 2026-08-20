@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import PwaInstall from "./pwa-install";
+import SplashScreen from "./splash-screen";
 
 export const metadata: Metadata = {
   title:
@@ -80,6 +81,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </Script>
       </head>
       <body className="frontofpage min-h-full flex flex-col">
+        <SplashScreen />
         {children}
         <PwaInstall />
 

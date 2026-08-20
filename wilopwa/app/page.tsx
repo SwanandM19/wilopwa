@@ -1,3 +1,5 @@
+import Script from "next/script";
+
 export default function Home() {
   return (
     <>
@@ -27,7 +29,7 @@ export default function Home() {
             </div>
         </div>
 
-        <header className="wilo-header" id="wilo-header" data-wilo-header-initialized="true">
+        <header className="wilo-header" id="wilo-header">
             <div className="wilo-header__meta-top">
                 <div className="wilo-header__meta-top-inner container">
                     <div className="wilo-header__logo" itemScope itemType="http://schema.org/Organization">
@@ -113,7 +115,7 @@ export default function Home() {
                     </ul>
                     <div className="wilo-header__nav-actions">
                         <a href="https://wilo.com/in/en/Search-results.html" className="wilo-header__search-trigger">
-                            <span className="wilo-icon icon-search"></span>
+                            <img src="/search.png" alt="" className="wilo-icon icon-search" style={{ width: '18px', height: '18px' }} />
                             <span className="wilo-header__search-label">Search</span>
                         </a>
                         <button className="wilo-header__nav-icon wilo-header__nav-icon--globe" type="button"
@@ -2061,15 +2063,15 @@ export default function Home() {
                         </div>
                         <div className="stageSlide">
                             <picture>
-                                <source srcSet="//cms.media.wilo.com/cdnpic/wilo779266/11023710/wilo779266_767x460.jpg"
+                                <source srcSet="/heroimage.png"
                                     media="(max-width: 767px)" />
-                                <source srcSet="//cms.media.wilo.com/cdnpic/wilo779266/11023710/wilo779266_1280x690.jpg"
+                                <source srcSet="/heroimage.png"
                                     media="(min-width: 768px) and (max-width: 1280px)" />
-                                <source srcSet="//cms.media.wilo.com/cdnpic/wilo779266/11023710/wilo779266_1600x710.jpg"
+                                <source srcSet="/heroimage.png"
                                     media="(min-width: 1281px) and (max-width: 1600px)" />
-                                <source srcSet="//cms.media.wilo.com/cdnpic/wilo779266/11023710/wilo779266_1920x730.jpg"
+                                <source srcSet="/heroimage.png"
                                     media="(min-width: 1601px)" />
-                                <img src="//cms.media.wilo.com/cdnpic/wilo779266/11023710/wilo779266_1920x730.jpg" />
+                                <img src="/heroimage.png" alt="" />
                             </picture>
                             <div className="info-wrapper container">
                                 <div className="info no-image">
@@ -2082,18 +2084,7 @@ export default function Home() {
                             </div>
                             <div
                                 style={{ position: 'absolute', top: '8px', left: '8px', zIndex: '1000', cursor: 'pointer', opacity: '1', transition: 'opacity 200ms', width: '24px', height: '24px' }}>
-                                <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <title>Add to Photoshop Extension</title>
-                                    <path
-                                        d="M44.26 0H9.74C4.36075 0 0 4.36075 0 9.74V44.26C0 49.6393 4.36075 54 9.74 54H44.26C49.6393 54 54 49.6393 54 44.26V9.74C54 4.36075 49.6393 0 44.26 0Z"
-                                        fill="#001E36"></path>
-                                    <path
-                                        d="M18.7398 14.4297C25.7698 14.4297 29.7298 17.7197 29.7298 23.2397C29.7298 29.6797 24.3598 32.2697 19.3298 32.2697H15.9298V39.2297H9.0498V14.4297H18.7498H18.7398ZM15.9298 20.3097V26.3797H18.9598C21.0698 26.3797 22.5498 25.5297 22.5498 23.3797C22.5498 21.4197 21.2898 20.3097 19.1098 20.3097H15.9298Z"
-                                        fill="#31A8FF"></path>
-                                    <path
-                                        d="M31.4299 37.9995L31.4699 32.2595C33.4299 33.5595 36.1699 34.3695 38.0599 34.3695C39.3499 34.3695 39.9499 33.9995 39.9499 33.3295C39.9499 32.5895 39.1399 32.2895 37.5799 31.8095C34.5799 30.9195 31.2899 29.6995 31.2899 25.7795C31.2899 21.8595 34.5799 19.5595 39.3599 19.5595C41.6199 19.5595 43.4699 19.8895 45.0999 20.5995L45.0599 26.0795C43.7699 25.2995 41.2099 24.5995 39.5499 24.5995C38.3299 24.5995 37.8499 24.9695 37.8499 25.5295C37.8499 26.1995 38.4399 26.3795 40.2199 26.9395C43.6599 27.9795 46.5499 29.0895 46.5499 33.1195C46.5499 37.1495 43.3999 39.5595 38.4799 39.5595C35.8899 39.5595 33.4499 39.1195 31.4499 38.0095L31.4299 37.9995Z"
-                                        fill="#31A8FF"></path>
-                                </svg></div>
+                                </div>
                         </div>
                         <div className="stageSlide">
                             <picture>
@@ -2223,276 +2214,81 @@ export default function Home() {
                     <div className="row product-slider-section section-front">
                         <div className="col-md-12">
                             <div className="item-slider slick-initialized slick-slider">
-                                <div className="slider-arrow arrow-left slick-arrow" style={{  }}><span
-                                        className="wilo-icon icon-arrow-left"></span></div>
-                                <div className="slick-list draggable">
-                                    <div className="slick-track"
-                                        style={{ opacity: '1', width: '3612px', transform: 'translate3d(-602px, 0px, 0px)' }}>
-                                        <div className="slick-slide slick-cloned" data-slick-index="-2" id=""
-                                            aria-hidden="true" style={{ width: '301px' }} tabIndex={-1}>
-                                            <div>
-                                                <div className="item-slide" style={{ width: '100%', display: 'inline-block' }}>
-                                                    <div className="col-xs-12 image-wrapper">
-                                                        <img
-                                                            src="//cms.media.wilo.com/dcipicpfinder/wilo112706/1358471/wilo112706_2.png" />
-                                                    </div>
-                                                    <div className="col-xs-12 slider-description">
-                                                        <span className="slider-product-headline">Wilo-EMU FA
-                                                            (customized)</span>
-                                                        <span className="subline"></span>
-                                                        <a className="wilo-btn wilo-btn-primary"
-                                                            data-mw-series-name="Wilo-EMU FA (customized)"
-                                                            href="https://wilo.com/in/en/Products-and-expertise/en/products-expertise/wilo-emu-fa-customized"
-                                                            tabIndex={-1}>
-                                                            Details
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="slick-slide slick-cloned" data-slick-index="-1" id=""
-                                            aria-hidden="true" style={{ width: '301px' }} tabIndex={-1}>
-                                            <div>
-                                                <div className="item-slide" style={{ width: '100%', display: 'inline-block' }}>
-                                                    <div className="col-xs-12 image-wrapper">
-                                                        <img
-                                                            src="//cms.media.wilo.com/dcipicpfinder/wilo108715/1167268/wilo108715_2.png" />
-                                                    </div>
-                                                    <div className="col-xs-12 slider-description">
-                                                        <span className="slider-product-headline">Wilo-Comfort CO-/COR-Helix
-                                                            V.../CC</span>
-                                                        <span className="subline"></span>
-                                                        <a className="wilo-btn wilo-btn-primary"
-                                                            data-mw-series-name="Wilo-Comfort CO-/COR-Helix V.../CC"
-                                                            href="https://wilo.com/in/en/Products-and-expertise/en/products-expertise/wilo-comfort-co-cor-helix-v-cc"
-                                                            tabIndex={-1}>
-                                                            Details
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="slick-slide slick-current slick-active" data-slick-index="0"
-                                            aria-hidden="false" style={{ width: '301px' }}>
-                                            <div>
-                                                <div className="item-slide" style={{ width: '100%', display: 'inline-block' }}>
-                                                    <div className="col-xs-12 image-wrapper">
-                                                        <img
-                                                            src="//cms.media.wilo.com/dcipicpfinder/wilo6778/1525883/wilo6778_2.png" />
-                                                    </div>
-                                                    <div className="col-xs-12 slider-description">
-                                                        <span className="slider-product-headline">Wilo-SCP</span>
-                                                        <span className="subline"></span>
-                                                        <a className="wilo-btn wilo-btn-primary"
-                                                            data-mw-series-name="Wilo-SCP"
-                                                            href="https://wilo.com/in/en/Products-and-expertise/en/products-expertise/wilo-scp"
-                                                            tabIndex={0}>
-                                                            Details
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="slick-slide slick-active" data-slick-index="1" aria-hidden="false"
-                                            style={{ width: '301px' }}>
-                                            <div>
-                                                <div className="item-slide" style={{ width: '100%', display: 'inline-block' }}>
-                                                    <div className="col-xs-12 image-wrapper">
-                                                        <img
-                                                            src="//cms.media.wilo.com/dcipicpfinder/wilo191964/2205613/wilo191964_2.png" />
-                                                    </div>
-                                                    <div className="col-xs-12 slider-description">
-                                                        <span className="slider-product-headline">Wilo-Atmos GIGA-N</span>
-                                                        <span className="subline"></span>
-                                                        <a className="wilo-btn wilo-btn-primary"
-                                                            data-mw-series-name="Wilo-Atmos GIGA-N"
-                                                            href="https://wilo.com/in/en/Products-and-expertise/en/products-expertise/wilo-atmos-giga-n"
-                                                            tabIndex={0}>
-                                                            Details
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="slick-slide" data-slick-index="2" aria-hidden="true"
-                                            style={{ width: '301px' }} tabIndex={-1}>
-                                            <div>
-                                                <div className="item-slide" style={{ width: '100%', display: 'inline-block' }}>
-                                                    <div className="col-xs-12 image-wrapper">
-                                                        <img
-                                                            src="//cms.media.wilo.com/dcipicpfinder/wilo23289/1530859/wilo23289_2.png" />
-                                                    </div>
-                                                    <div className="col-xs-12 slider-description">
-                                                        <span className="slider-product-headline">Wilo-Helix FIRST V</span>
-                                                        <span className="subline"></span>
-                                                        <a className="wilo-btn wilo-btn-primary"
-                                                            data-mw-series-name="Wilo-Helix FIRST V"
-                                                            href="https://wilo.com/in/en/Products-and-expertise/en/products-expertise/wilo-helix-first-v"
-                                                            tabIndex={-1}>
-                                                            Details
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="slick-slide" data-slick-index="3" aria-hidden="true"
-                                            style={{ width: '301px' }} tabIndex={-1}>
-                                            <div>
-                                                <div className="item-slide" style={{ width: '100%', display: 'inline-block' }}>
-                                                    <div className="col-xs-12 image-wrapper">
-                                                        <img
-                                                            src="//cms.media.wilo.com/dcipicpfinder/wilo112706/1358471/wilo112706_2.png" />
-                                                    </div>
-                                                    <div className="col-xs-12 slider-description">
-                                                        <span className="slider-product-headline">Wilo-EMU FA
-                                                            (customized)</span>
-                                                        <span className="subline"></span>
-                                                        <a className="wilo-btn wilo-btn-primary"
-                                                            data-mw-series-name="Wilo-EMU FA (customized)"
-                                                            href="https://wilo.com/in/en/Products-and-expertise/en/products-expertise/wilo-emu-fa-customized"
-                                                            tabIndex={-1}>
-                                                            Details
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="slick-slide" data-slick-index="4" aria-hidden="true"
-                                            style={{ width: '301px' }} tabIndex={-1}>
-                                            <div>
-                                                <div className="item-slide" style={{ width: '100%', display: 'inline-block' }}>
-                                                    <div className="col-xs-12 image-wrapper">
-                                                        <img
-                                                            src="//cms.media.wilo.com/dcipicpfinder/wilo108715/1167268/wilo108715_2.png" />
-                                                    </div>
-                                                    <div className="col-xs-12 slider-description">
-                                                        <span className="slider-product-headline">Wilo-Comfort CO-/COR-Helix
-                                                            V.../CC</span>
-                                                        <span className="subline"></span>
-                                                        <a className="wilo-btn wilo-btn-primary"
-                                                            data-mw-series-name="Wilo-Comfort CO-/COR-Helix V.../CC"
-                                                            href="https://wilo.com/in/en/Products-and-expertise/en/products-expertise/wilo-comfort-co-cor-helix-v-cc"
-                                                            tabIndex={-1}>
-                                                            Details
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="slick-slide slick-cloned" data-slick-index="5" id=""
-                                            aria-hidden="true" style={{ width: '301px' }} tabIndex={-1}>
-                                            <div>
-                                                <div className="item-slide" style={{ width: '100%', display: 'inline-block' }}>
-                                                    <div className="col-xs-12 image-wrapper">
-                                                        <img
-                                                            src="//cms.media.wilo.com/dcipicpfinder/wilo6778/1525883/wilo6778_2.png" />
-                                                    </div>
-                                                    <div className="col-xs-12 slider-description">
-                                                        <span className="slider-product-headline">Wilo-SCP</span>
-                                                        <span className="subline"></span>
-                                                        <a className="wilo-btn wilo-btn-primary"
-                                                            data-mw-series-name="Wilo-SCP"
-                                                            href="https://wilo.com/in/en/Products-and-expertise/en/products-expertise/wilo-scp"
-                                                            tabIndex={-1}>
-                                                            Details
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="slick-slide slick-cloned" data-slick-index="6" id=""
-                                            aria-hidden="true" style={{ width: '301px' }} tabIndex={-1}>
-                                            <div>
-                                                <div className="item-slide" style={{ width: '100%', display: 'inline-block' }}>
-                                                    <div className="col-xs-12 image-wrapper">
-                                                        <img
-                                                            src="//cms.media.wilo.com/dcipicpfinder/wilo191964/2205613/wilo191964_2.png" />
-                                                    </div>
-                                                    <div className="col-xs-12 slider-description">
-                                                        <span className="slider-product-headline">Wilo-Atmos GIGA-N</span>
-                                                        <span className="subline"></span>
-                                                        <a className="wilo-btn wilo-btn-primary"
-                                                            data-mw-series-name="Wilo-Atmos GIGA-N"
-                                                            href="https://wilo.com/in/en/Products-and-expertise/en/products-expertise/wilo-atmos-giga-n"
-                                                            tabIndex={-1}>
-                                                            Details
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="slick-slide slick-cloned" data-slick-index="7" id=""
-                                            aria-hidden="true" style={{ width: '301px' }} tabIndex={-1}>
-                                            <div>
-                                                <div className="item-slide" style={{ width: '100%', display: 'inline-block' }}>
-                                                    <div className="col-xs-12 image-wrapper">
-                                                        <img
-                                                            src="//cms.media.wilo.com/dcipicpfinder/wilo23289/1530859/wilo23289_2.png" />
-                                                    </div>
-                                                    <div className="col-xs-12 slider-description">
-                                                        <span className="slider-product-headline">Wilo-Helix FIRST V</span>
-                                                        <span className="subline"></span>
-                                                        <a className="wilo-btn wilo-btn-primary"
-                                                            data-mw-series-name="Wilo-Helix FIRST V"
-                                                            href="https://wilo.com/in/en/Products-and-expertise/en/products-expertise/wilo-helix-first-v"
-                                                            tabIndex={-1}>
-                                                            Details
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="slick-slide slick-cloned" data-slick-index="8" id=""
-                                            aria-hidden="true" style={{ width: '301px' }} tabIndex={-1}>
-                                            <div>
-                                                <div className="item-slide" style={{ width: '100%', display: 'inline-block' }}>
-                                                    <div className="col-xs-12 image-wrapper">
-                                                        <img
-                                                            src="//cms.media.wilo.com/dcipicpfinder/wilo112706/1358471/wilo112706_2.png" />
-                                                    </div>
-                                                    <div className="col-xs-12 slider-description">
-                                                        <span className="slider-product-headline">Wilo-EMU FA
-                                                            (customized)</span>
-                                                        <span className="subline"></span>
-                                                        <a className="wilo-btn wilo-btn-primary"
-                                                            data-mw-series-name="Wilo-EMU FA (customized)"
-                                                            href="https://wilo.com/in/en/Products-and-expertise/en/products-expertise/wilo-emu-fa-customized"
-                                                            tabIndex={-1}>
-                                                            Details
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="slick-slide slick-cloned" data-slick-index="9" id=""
-                                            aria-hidden="true" style={{ width: '301px' }} tabIndex={-1}>
-                                            <div>
-                                                <div className="item-slide" style={{ width: '100%', display: 'inline-block' }}>
-                                                    <div className="col-xs-12 image-wrapper">
-                                                        <img
-                                                            src="//cms.media.wilo.com/dcipicpfinder/wilo108715/1167268/wilo108715_2.png" />
-                                                    </div>
-                                                    <div className="col-xs-12 slider-description">
-                                                        <span className="slider-product-headline">Wilo-Comfort CO-/COR-Helix
-                                                            V.../CC</span>
-                                                        <span className="subline"></span>
-                                                        <a className="wilo-btn wilo-btn-primary"
-                                                            data-mw-series-name="Wilo-Comfort CO-/COR-Helix V.../CC"
-                                                            href="https://wilo.com/in/en/Products-and-expertise/en/products-expertise/wilo-comfort-co-cor-helix-v-cc"
-                                                            tabIndex={-1}>
-                                                            Details
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div className="item-slide">
+                                    <div className="col-xs-12 image-wrapper">
+                                        <img src="//cms.media.wilo.com/dcipicpfinder/wilo6778/1525883/wilo6778_2.png" alt="Wilo-SCP" />
+                                    </div>
+                                    <div className="col-xs-12 slider-description">
+                                        <span className="slider-product-headline">Wilo-SCP</span>
+                                        <span className="subline"></span>
+                                        <a className="wilo-btn wilo-btn-primary" data-mw-series-name="Wilo-SCP"
+                                            href="https://wilo.com/in/en/Products-and-expertise/en/products-expertise/wilo-scp">
+                                            Details
+                                        </a>
                                     </div>
                                 </div>
-                                <div className="slider-arrow arrow-right slick-arrow" style={{  }}><span
-                                        className="wilo-icon icon-arrow-right"></span></div>
+                                <div className="item-slide">
+                                    <div className="col-xs-12 image-wrapper">
+                                        <img src="//cms.media.wilo.com/dcipicpfinder/wilo191964/2205613/wilo191964_2.png" alt="Wilo-Atmos GIGA-N" />
+                                    </div>
+                                    <div className="col-xs-12 slider-description">
+                                        <span className="slider-product-headline">Wilo-Atmos GIGA-N</span>
+                                        <span className="subline"></span>
+                                        <a className="wilo-btn wilo-btn-primary" data-mw-series-name="Wilo-Atmos GIGA-N"
+                                            href="https://wilo.com/in/en/Products-and-expertise/en/products-expertise/wilo-atmos-giga-n">
+                                            Details
+                                        </a>
+                                    </div>
+                                </div>
+                                <div className="item-slide">
+                                    <div className="col-xs-12 image-wrapper">
+                                        <img src="//cms.media.wilo.com/dcipicpfinder/wilo23289/1530859/wilo23289_2.png" alt="Wilo-Helix FIRST V" />
+                                    </div>
+                                    <div className="col-xs-12 slider-description">
+                                        <span className="slider-product-headline">Wilo-Helix FIRST V</span>
+                                        <span className="subline"></span>
+                                        <a className="wilo-btn wilo-btn-primary" data-mw-series-name="Wilo-Helix FIRST V"
+                                            href="https://wilo.com/in/en/Products-and-expertise/en/products-expertise/wilo-helix-first-v">
+                                            Details
+                                        </a>
+                                    </div>
+                                </div>
+                                <div className="item-slide">
+                                    <div className="col-xs-12 image-wrapper">
+                                        <img src="//cms.media.wilo.com/dcipicpfinder/wilo112706/1358471/wilo112706_2.png" alt="Wilo-EMU FA (customized)" />
+                                    </div>
+                                    <div className="col-xs-12 slider-description">
+                                        <span className="slider-product-headline">Wilo-EMU FA (customized)</span>
+                                        <span className="subline"></span>
+                                        <a className="wilo-btn wilo-btn-primary" data-mw-series-name="Wilo-EMU FA (customized)"
+                                            href="https://wilo.com/in/en/Products-and-expertise/en/products-expertise/wilo-emu-fa-customized">
+                                            Details
+                                        </a>
+                                    </div>
+                                </div>
+                                <div className="item-slide">
+                                    <div className="col-xs-12 image-wrapper">
+                                        <img src="//cms.media.wilo.com/dcipicpfinder/wilo108715/1167268/wilo108715_2.png" alt="Wilo-Comfort CO-/COR-Helix V.../CC" />
+                                    </div>
+                                    <div className="col-xs-12 slider-description">
+                                        <span className="slider-product-headline">Wilo-Comfort CO-/COR-Helix V.../CC</span>
+                                        <span className="subline"></span>
+                                        <a className="wilo-btn wilo-btn-primary" data-mw-series-name="Wilo-Comfort CO-/COR-Helix V.../CC"
+                                            href="https://wilo.com/in/en/Products-and-expertise/en/products-expertise/wilo-comfort-co-cor-helix-v-cc">
+                                            Details
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <a id="anchor_html_block"></a>
+                    
+<script
+    src="https://storage.googleapis.com/wilo-chatbot-widget-static/wilo-widget.js"
+    data-api-base="https://wilo-backend-143701066898.asia-south1.run.app">
+  </script>
                     <span className="section-divide"></span>
                     <a id="anchor_st_three_column_container_home__mw"></a><a id="anchor_Segments"></a>
                     <div className="row three-cols-section page-module multi-col-section">
@@ -2688,7 +2484,7 @@ export default function Home() {
                                     <div className="button-module page-module">
                                         <div>
                                             <a className="full-button wilo-btn wilo-btn-primary"
-                                                href="https://wilo.com/in/en/About-Us/Media-Downloads/Media-Downloads.html"
+                                                href="https://wilo.com/in/en/About-Us/Media-Downloads/"
                                                 title="Media &amp; Downloads">Media &amp; Downloads</a>
                                         </div>
                                     </div>
@@ -2717,7 +2513,7 @@ export default function Home() {
                                         plumbing and technical professionals while promoting awareness of modern pumping
                                         technologies.</p>
                                     <div className="button-module">
-                                        <a href="About-Us/Media-Downloads/Press-Releases/News-details-(local).html"
+                                        <a href="https://wilo.com/in/en/About-Us/Media-Downloads/Press-Releases/News-details-(local).html"
                                             className="wilo-btn wilo-btn-primary">Read more</a>
                                     </div>
                                 </div>
@@ -2737,7 +2533,7 @@ export default function Home() {
                                         Sambhaji Nagar, bringing together more than 45 leading builders, developers,
                                         consultants, architects, and MEP professionals from across the region.</p>
                                     <div className="button-module">
-                                        <a href="About-Us/Media-Downloads/Press-Releases/News-details-(local).html"
+                                        <a href="https://wilo.com/in/en/About-Us/Media-Downloads/Press-Releases/News-details-(local).html"
                                             className="wilo-btn wilo-btn-primary">Read more</a>
                                     </div>
                                 </div>
@@ -2759,7 +2555,7 @@ export default function Home() {
                                         Pharmaceuticals, Metal, Textiles, Chemicals, Tyres, Stationery Manufacturing,
                                         and Edible Oil Industries.</p>
                                     <div className="button-module">
-                                        <a href="About-Us/Media-Downloads/Press-Releases/News-details-(local).html"
+                                        <a href="https://wilo.com/in/en/About-Us/Media-Downloads/Press-Releases/News-details-(local).html"
                                             className="wilo-btn wilo-btn-primary">Read more</a>
                                     </div>
                                 </div>

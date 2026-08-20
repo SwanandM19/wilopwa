@@ -7,10 +7,8 @@ interface BeforeInstallPromptEvent extends Event {
   userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
 }
 
-// Dismissing only suppresses the prompt for the rest of this browser tab's
-// session (sessionStorage), not across visits.
-const DISMISS_KEY = "wilo-pwa-install-dismissed-session-v3";
-
+// Dismissing only hides the card for the current page load; refreshing
+// shows it again (as long as the browser still fires beforeinstallprompt).
 export default function PwaInstall() {
   const [deferredPrompt, setDeferredPrompt] =
     useState<BeforeInstallPromptEvent | null>(null);
@@ -18,11 +16,6 @@ export default function PwaInstall() {
 
   const dismiss = useCallback(() => {
     setVisible(false);
-    try {
-      window.sessionStorage.setItem(DISMISS_KEY, "1");
-    } catch {
-      // Ignore storage errors (e.g. private mode)
-    }
   }, []);
 
   useEffect(() => {
@@ -41,15 +34,6 @@ export default function PwaInstall() {
 
     const onBeforeInstallPrompt = (event: Event) => {
       event.preventDefault();
-
-      try {
-        if (window.sessionStorage.getItem(DISMISS_KEY)) {
-          return;
-        }
-      } catch {
-        // Ignore storage errors
-      }
-
       setDeferredPrompt(event as BeforeInstallPromptEvent);
       setVisible(true);
     };
