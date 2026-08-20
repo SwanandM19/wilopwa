@@ -116,3 +116,43 @@ body {
 .pwa-install-out {
   animation: pwa-install-out 0.18s ease-in both;
 }
+
+/* Splash screen: logo scales/fades in while water-droplet ripple rings
+   expand outward behind it. */
+@keyframes splash-logo-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes splash-ripple {
+  0% {
+    transform: scale(0.3);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+.splash-logo {
+  animation: splash-logo-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.splash-ripple {
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  border-radius: 9999px;
+  animation: splash-ripple 1.8s ease-out infinite;
+}
