@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Only shown when launched standalone (installed PWA), not for regular
 // browser tab visits. Plays once per launch, then reveals the app.
 export default function SplashScreen() {
   const [visible, setVisible] = useState(false);
   const [closing, setClosing] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const nav = window.navigator as Navigator & { standalone?: boolean };
@@ -40,6 +41,33 @@ export default function SplashScreen() {
     }
   }, [closing]);
 
+  // iOS Safari's `autoplay` attribute alone is unreliable right after an
+  // installed PWA cold-launches — it sometimes leaves the video paused on
+  // its first frame with a native play button instead of starting it. Kick
+  // playback explicitly once the video has data, and skip the splash
+  // entirely (rather than getting stuck) if the browser still refuses.
+  useEffect(() => {
+    if (!visible) return;
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+
+    const tryPlay = () => {
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(() => setClosing(true));
+      }
+    };
+
+    if (video.readyState >= 2) {
+      tryPlay();
+    } else {
+      video.addEventListener("loadeddata", tryPlay, { once: true });
+      return () => video.removeEventListener("loadeddata", tryPlay);
+    }
+  }, [visible]);
+
   if (!visible) return null;
 
   return (
@@ -49,10 +77,12 @@ export default function SplashScreen() {
       }`}
     >
       <video
+        ref={videoRef}
         src="/splash.mp4"
         autoPlay
         muted
         playsInline
+        preload="auto"
         onEnded={() => setClosing(true)}
         onError={() => setClosing(true)}
         className="h-full w-full object-contain"
